@@ -13,16 +13,16 @@ class NumberReversal
 
     static int ReverseNumber(int number)
     {
-        const int DECI_DEVIDER = 10;
+        int Deci = 10;
         int reverseNumber = 0;
         while (number > 0)
         {
             // Get the last digit
-            int remainder = number % DECI_DEVIDER;
+            int remainder = number % Deci;
             // Append it to reverse
-            reverseNumber = reverseNumber * DECI_DEVIDER + remainder; 
+            reverseNumber = reverseNumber * Deci + remainder; 
             // Removing the last digit from the original number
-            number /= DECI_DEVIDER; 
+            number /= Deci; 
         }
         return reverseNumber;
     }
