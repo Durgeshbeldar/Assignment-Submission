@@ -12,16 +12,18 @@ class PalindromeChecker {
 
   // IsPalindrome Function is used to check the number is Palindrome OR Not.
   public static bool IsPalindrome(int number) {
+    const int deciDevider = 10;
+    const int Zero = 0;
     // Negative numbers are not palindromes
-    if (number < 0) return false;
+    if (number < Zero) return false;
     int originalNumber = number;
-    int reverseNumber = 0;
-    while (number > 0) {
+    int reverseNumber = Zero;
+    while (number > Zero) {
       // Extracting the digit from back
-      int remainder = number % 10;
+      int remainder = number % deciDevider;
       //Adding the Extracted digit to get reverse of originalNumber
-      reverseNumber = reverseNumber * 10 + remainder;
-      number /= 10;
+      reverseNumber = reverseNumber * deciDevider + remainder;
+      number /= deciDevider;
     }
     return (originalNumber == reverseNumber);
   }
