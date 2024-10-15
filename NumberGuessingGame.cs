@@ -3,13 +3,27 @@ using System;
 using System.Collections.Generic;
 namespace NumberGuessing
 {
-    class PlayGameClass
+    // ===================== Main Method Class ==========================
+    class NumberGuessingGame
+    {   
+        public static void Main(string[] args)
+        { 
+            PlayGameClass.PlayGame();
+            Console.WriteLine("Do You Want to Play Again... Yes/No");
+            string userChoice = Console.ReadLine();
+            if (userChoice == "Yes" || userChoice == "yes")
+                PlayGameClass.PlayGame();
+            Console.WriteLine("Thank You For Playing the Game...!");
+        }
+    }
+    
+    public class PlayGameClass
     {
         const int MIN_NUMBER = 1;
         const int MAX_NUMBER = 100;
         const int MAX_ATTEMPTS = 7;
        
-        static void PlayGame()
+        public static void PlayGame()
         {
             Random random = new Random();
             int magicNumber = random.Next(MIN_NUMBER, MAX_NUMBER + 1);
@@ -53,20 +67,6 @@ namespace NumberGuessing
                     return userNumber;
                 Console.WriteLine($"Please Enter a Valid Number (Between {MIN_NUMBER} and {MAX_NUMBER})");
                 return IsvalidNumber();
-            }
-        }
-
-        // ===================== Main Method Class ==========================
-        class NumberGuessingGame
-        {   
-            public static void Main(string[] args)
-            { 
-                PlayGameClass.PlayGame();
-                Console.WriteLine("Do You Want to Play Again... Yes/No");
-                string userChoice = Console.ReadLine();
-                if (userChoice == "Yes" || userChoice == "yes")
-                    PlayGameClass.PlayGame();
-                Console.WriteLine("Thank You For Playing the Game...!");
             }
         }
     }
